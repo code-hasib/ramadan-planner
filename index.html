@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramadan Planner 2024</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Ramadan Planner 2024</h1>
+        <p>Make the most of your Ramadan with this interactive planner</p>
+    </header>
+
+    <section id="duas">
+        <h2>Dua of the Day</h2>
+        <p id="dua-text">رَبَّنَا إِنَّنَا آمَنَّا فَاغْفِرْ لَنَا ذُنُوبَنَا وَقِنَا عَذَابَ النَّارِ</p>
+        <p>Our Lord, indeed we have believed, so forgive us our sins and protect us from the punishment of the fire.</p>
+    </section>
+
+    <section id="prayer-checklist">
+        <h2>Prayer Checklist</h2>
+        <ul>
+            <li><input type="checkbox" id="fajr"> Fajr</li>
+            <li><input type="checkbox" id="dhuhr"> Dhuhr</li>
+            <li><input type="checkbox" id="asr"> Asr</li>
+            <li><input type="checkbox" id="maghrib"> Maghrib</li>
+            <li><input type="checkbox" id="isha"> Isha</li>
+        </ul>
+        <button onclick="trackProgress()">Track Progress</button>
+        <p id="progress-message"></p>
+    </section>
+
+    <section id="dhikr">
+        <h2>Dhikr Checklist</h2>
+        <ul>
+            <li><input type="checkbox" id="dhikr-morning"> Dhikr of the Morning</li>
+            <li><input type="checkbox" id="dhikr-evening"> Dhikr of the Evening</li>
+            <li><input type="checkbox" id="istigfar"> Istigfar 70 times</li>
+            <li><input type="checkbox" id="blessings"> Send blessings upon the Prophet (صلى الله عليه وسلم)</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>Support Us: <a href="https://gtaf.org/donate" target="_blank">Donate Here</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
