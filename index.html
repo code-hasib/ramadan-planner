@@ -4,46 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ramadan Planner 2024</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Ramadan Planner 2024</h1>
-        <p>Make the most of your Ramadan with this interactive planner</p>
-    </header>
+    <div class="container">
+        <header>
+            <h1>13th Ramadan Planner</h1>
+        </header>
 
-    <section id="duas">
-        <h2>Dua of the Day</h2>
-        <p id="dua-text">رَبَّنَا إِنَّنَا آمَنَّا فَاغْفِرْ لَنَا ذُنُوبَنَا وَقِنَا عَذَابَ النَّارِ</p>
-        <p>Our Lord, indeed we have believed, so forgive us our sins and protect us from the punishment of the fire.</p>
-    </section>
+        <div class="planner">
+            <!-- Salah Checklist -->
+            <div class="section" id="salah">
+                <h2>Salah Checklist</h2>
+                <ul>
+                    <li><input type="checkbox" id="fajr"> Fajr</li>
+                    <li><input type="checkbox" id="dhuhr"> Dhuhr</li>
+                    <li><input type="checkbox" id="asr"> Asr</li>
+                    <li><input type="checkbox" id="maghrib"> Maghrib</li>
+                    <li><input type="checkbox" id="isha"> Isha</li>
+                    <li><input type="checkbox" id="tarawih"> Tarawih</li>
+                </ul>
+            </div>
 
-    <section id="prayer-checklist">
-        <h2>Prayer Checklist</h2>
-        <ul>
-            <li><input type="checkbox" id="fajr"> Fajr</li>
-            <li><input type="checkbox" id="dhuhr"> Dhuhr</li>
-            <li><input type="checkbox" id="asr"> Asr</li>
-            <li><input type="checkbox" id="maghrib"> Maghrib</li>
-            <li><input type="checkbox" id="isha"> Isha</li>
-        </ul>
-        <button onclick="trackProgress()">Track Progress</button>
-        <p id="progress-message"></p>
-    </section>
+            <!-- Quran Tracker -->
+            <div class="section" id="quran">
+                <h2>Quran Tracker</h2>
+                <input type="number" placeholder="Verses" id="quran-verses">
+                <input type="number" placeholder="Pages" id="quran-pages">
+                <input type="number" placeholder="Juz" id="quran-juz">
+            </div>
 
-    <section id="dhikr">
-        <h2>Dhikr Checklist</h2>
-        <ul>
-            <li><input type="checkbox" id="dhikr-morning"> Dhikr of the Morning</li>
-            <li><input type="checkbox" id="dhikr-evening"> Dhikr of the Evening</li>
-            <li><input type="checkbox" id="istigfar"> Istigfar 70 times</li>
-            <li><input type="checkbox" id="blessings"> Send blessings upon the Prophet (صلى الله عليه وسلم)</li>
-        </ul>
-    </section>
+            <!-- Dhikr Checklist -->
+            <div class="section" id="dhikr">
+                <h2>Dhikr Checklist</h2>
+                <ul>
+                    <li><input type="checkbox" id="istigfar"> Istigfar 70 times</li>
+                    <li><input type="checkbox" id="blessings"> Send blessings upon the Prophet (صلى الله عليه وسلم)</li>
+                    <li><input type="checkbox" id="dhikr-morning"> Dhikr of the morning</li>
+                    <li><input type="checkbox" id="dhikr-evening"> Dhikr of the evening</li>
+                    <li><input type="checkbox" id="dua"> Dua before sleep</li>
+                </ul>
+            </div>
 
-    <footer>
-        <p>Support Us: <a href="https://gtaf.org/donate" target="_blank">Donate Here</a></p>
-    </footer>
+            <!-- Notes -->
+            <div class="section" id="notes">
+                <h2>Notes</h2>
+                <textarea placeholder="Write your notes here..."></textarea>
+            </div>
+
+            <!-- Dua of the Day -->
+            <div class="section" id="dua">
+                <h2>Dua of the Day</h2>
+                <p id="dua-text">رَبَّنَا إِنَّنَا آمَنَّا فَاغْفِرْ لَنَا ذُنُوبَنَا وَقِنَا عَذَابَ النَّارِ</p>
+                <p>My Lord, indeed I am, for whatever good You would send down to me, in need. (Surah Qasas 28:24)</p>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
