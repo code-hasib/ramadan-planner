@@ -1,30 +1,27 @@
-// Function to track prayer checklist progress
-function trackProgress() {
-    let prayers = ["fajr", "dhuhr", "asr", "maghrib", "isha"];
-    let completedPrayers = 0;
+// Function to load saved data
+function loadProgress() {
+    let prayers = ["fajr", "dhuhr", "asr", "maghrib", "isha", "tarawih"];
     prayers.forEach(prayer => {
         let checkbox = document.getElementById(prayer);
-        if (checkbox.checked) {
-            completedPrayers++;
+        if (localStorage.getItem(prayer) === "checked") {
+            checkbox.checked = true;
         }
     });
-    let progressMessage = `${completedPrayers} out of 5 prayers completed today.`;
-    document.getElementById("progress-message").innerText = progressMessage;
 }
 
-// Display Dua of the Day dynamically (can be updated for each day)
-function updateDua() {
-    let duas = [
-        "رَبَّنَا إِنَّنَا آمَنَّا فَاغْفِرْ لَنَا ذُنُوبَنَا وَقِنَا عَذَابَ النَّارِ",
-        "رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ",
-        "حَسْبِيَ اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ ۖ عَلَيْهِ تَوَكَّلْتُ ۖ وَهُوَ رَبُّ الْعَرْشِ الْعَظِيمِ",
-        "رَبِّ اجْعَلْنِي مُقِيمَ الصَّلَاةِ وَمِن ذُرِّيَّتِي ۚ رَبَّنَا وَتَقَبَّلْ دُعَاءِ"
-    ];
-    let randomIndex = Math.floor(Math.random() * duas.length);
-    document.getElementById("dua-text").innerText = duas[randomIndex];
+// Function to track progress and save to localStorage
+function trackProgress() {
+    let prayers = ["fajr", "dhuhr", "asr", "maghrib", "isha", "tarawih"];
+    prayers.forEach(prayer => {
+        let checkbox = document.getElementById(prayer);
+        localStorage.setItem(prayer, checkbox.checked ? "checked" : "unchecked");
+    });
 }
 
-// Initial Dua update when the page loads
-window.onload = function() {
-    updateDua();
-};
+// On page load, load previous progress
+window.onload = loadProgress;
+
+// Attach the track progress function to any relevant button or event
+document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+    checkbox.addEventListener('change', trackProgress);
+});
